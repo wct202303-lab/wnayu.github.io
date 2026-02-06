@@ -1,0 +1,1665 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>倩倩的北海3天2夜美食景点行程规划</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+            padding-bottom: 40px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #0a7bb9 0%, #1a9cd8 50%, #2cc3f0 100%);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.2;
+            z-index: 0;
+        }
+        
+        header .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .hotel-info {
+            background-color: rgba(255, 255, 255, 0.2);
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 30px;
+            margin-top: 10px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .hotel-info i {
+            margin-right: 8px;
+        }
+        
+        .days-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .day-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .day-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+        }
+        
+        .day-header {
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .day-2 .day-header {
+            background: linear-gradient(to right, #36d1dc, #5b86e5);
+        }
+        
+        .day-3 .day-header {
+            background: linear-gradient(to right, #834d9b, #d04ed6);
+        }
+        
+        .day-icon {
+            font-size: 2rem;
+            margin-right: 15px;
+            background-color: rgba(255, 255, 255, 0.2);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .day-title {
+            flex-grow: 1;
+        }
+        
+        .day-title h2 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+        
+        .day-title p {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+        
+        .day-content {
+            padding: 25px;
+        }
+        
+        .activity {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .activity:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .activity-time {
+            display: inline-block;
+            background-color: #f0f7ff;
+            color: #1a9cd8;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .activity-title {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: #2c3e50;
+            display: flex;
+            align-items: center;
+        }
+        
+        .activity-title i {
+            margin-right: 10px;
+            color: #ff7e5f;
+        }
+        
+        .activity-desc {
+            color: #555;
+            margin-bottom: 10px;
+        }
+        
+        .location-list, .food-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .location-tag, .food-tag {
+            background-color: #f1f8ff;
+            border: 1px solid #d1e6ff;
+            border-radius: 20px;
+            padding: 8px 15px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .food-tag {
+            background-color: #fff9f0;
+            border-color: #ffeccc;
+        }
+        
+        .location-tag:hover, .food-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .location-tag i, .food-tag i {
+            margin-right: 6px;
+            color: #5b86e5;
+        }
+        
+        .food-tag i {
+            color: #ff7e5f;
+        }
+        
+        .price {
+            margin-left: 8px;
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        
+        .navigation-link {
+            margin-left: 8px;
+            color: #1a9cd8;
+            cursor: pointer;
+            font-size: 0.85rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            background-color: rgba(26, 156, 216, 0.1);
+            padding: 2px 8px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .navigation-link:hover {
+            background-color: rgba(26, 156, 216, 0.2);
+            color: #0a7bb9;
+            transform: scale(1.05);
+        }
+        
+        .navigation-link i {
+            margin-right: 3px;
+            font-size: 0.8rem;
+        }
+        
+        .location-container {
+            background-color: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            margin-bottom: 40px;
+        }
+        
+        .location-container h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f7ff;
+            display: flex;
+            align-items: center;
+        }
+        
+        .location-container h2 i {
+            margin-right: 10px;
+            color: #e74c3c;
+        }
+        
+        .location-overview {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .location-area {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            border-left: 5px solid #36d1dc;
+        }
+        
+        .area-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .area-icon {
+            background-color: #36d1dc;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+        
+        .area-title h3 {
+            font-size: 1.4rem;
+            color: #2c3e50;
+        }
+        
+        .area-title p {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        .area-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .location-item {
+            background-color: white;
+            border-radius: 8px;
+            padding: 12px 15px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            border: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .location-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .location-name {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .location-name i {
+            margin-right: 8px;
+            color: #5b86e5;
+        }
+        
+        .location-details {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+        
+        .location-details .price {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        
+        .location-navigation {
+            margin-left: 10px;
+        }
+        
+        .location-connections {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .connection-line {
+            height: 2px;
+            background-color: #ddd;
+            flex-grow: 1;
+            max-width: 100px;
+            margin: 0 10px;
+            position: relative;
+        }
+        
+        .connection-line::after {
+            content: "→";
+            position: absolute;
+            right: -10px;
+            top: -10px;
+            color: #5b86e5;
+            font-size: 1.2rem;
+        }
+        
+        .connection-label {
+            background-color: #5b86e5;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .relative-map {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 30px 0;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            position: relative;
+        }
+        
+        .map-row {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin: 10px 0;
+        }
+        
+        .map-item {
+            background-color: white;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 0 10px;
+            text-align: center;
+            min-width: 150px;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .map-item.hotel {
+            border-color: #ff4757;
+            background-color: #fff5f5;
+        }
+        
+        .map-item.attraction {
+            border-color: #1e90ff;
+            background-color: #f0f8ff;
+        }
+        
+        .map-item.food {
+            border-color: #2ed573;
+            background-color: #f0fff4;
+        }
+        
+        .map-item-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+        
+        .map-item-desc {
+            font-size: 0.85rem;
+            color: #7f8c8d;
+        }
+        
+        .map-legend {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            margin-right: 8px;
+        }
+        
+        .hotel-legend {
+            background-color: #ff4757;
+        }
+        
+        .food-legend {
+            background-color: #2ed573;
+        }
+        
+        .attraction-legend {
+            background-color: #1e90ff;
+        }
+        
+        .tips {
+            background-color: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .tips h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f7ff;
+            display: flex;
+            align-items: center;
+        }
+        
+        .tips h2 i {
+            margin-right: 10px;
+            color: #2ecc71;
+        }
+        
+        .tips-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+        }
+        
+        .tip {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #36d1dc;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        .highlight {
+            background-color: #fff9e6;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #e67e22;
+        }
+        
+        .navigation-note {
+            background-color: #f0f7ff;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #5b86e5;
+            border-left: 4px solid #1a9cd8;
+        }
+        
+        .navigation-note i {
+            margin-right: 8px;
+            color: #1a9cd8;
+        }
+        
+        /* 浏览器检测提示 */
+        .browser-notice {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 10px;
+            padding: 12px 15px;
+            margin: 15px 0;
+            font-size: 0.9rem;
+            color: #856404;
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        
+        .browser-notice i {
+            margin-right: 8px;
+            color: #856404;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @media (max-width: 768px) {
+            .days-container {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .day-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .day-icon {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+            
+            .map-row {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .map-item {
+                margin: 10px 0;
+                width: 90%;
+            }
+            
+            .location-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .location-navigation {
+                margin-left: 0;
+                margin-top: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>倩倩的北海3天2夜美食景点行程规划</h1>
+            <p class="subtitle">北海美食与美景的完美结合之旅</p>
+            <div class="hotel-info">
+                <i class="fas fa-hotel"></i>住宿：北海泊林酒店（北部湾西路35号）
+            </div>
+        </div>
+    </header>
+    
+    <!-- 浏览器检测提示 -->
+    <div class="container">
+        <div id="browserNotice" class="browser-notice">
+            <i class="fas fa-info-circle"></i>
+            <span id="browserText"></span>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="days-container">
+            <!-- 第一天 -->
+            <div class="day-card day-1">
+                <div class="day-header">
+                    <div class="day-icon">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <div class="day-title">
+                        <h2>第一天：抵达北海 & 日落之旅</h2>
+                        <p>抵达北海，入住酒店，探索老街与海边日落</p>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <div class="activity">
+                        <span class="activity-time">上午 - 中午</span>
+                        <div class="activity-title">
+                            <i class="fas fa-plane-arrival"></i>抵达北海 & 入住酒店
+                        </div>
+                        <p class="activity-desc">抵达北海，前往北海泊林酒店办理入住手续，放下行李，准备开始美食之旅。</p>
+                        <div class="location-list">
+                            <div class="location-tag">
+                                <i class="fas fa-hotel"></i>北海泊林酒店（北部湾西路35号）
+                                <a href="javascript:void(0);" onclick="openAmap('北海泊林酒店')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="activity">
+                        <span class="activity-time">中午 - 下午</span>
+                        <div class="activity-title">
+                            <i class="fas fa-utensils"></i>午餐 & 北海老街美食探索
+                        </div>
+                        <p class="activity-desc">前往北海老街区域，品尝当地特色美食：</p>
+                        <div class="food-list">
+                            <div class="food-tag">李姨虾饼店 <span class="price">5</span>
+                                <a href="javascript:void(0);" onclick="openAmap('李姨虾饼店北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                            <div class="food-tag">付姨蛋散 <span class="price">5</span>
+                                <a href="javascript:void(0);" onclick="openAmap('付姨蛋散北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                            <div class="food-tag">老城杯子乾（发粒红糖）<span class="price">上午卖</span>
+                                <a href="javascript:void(0);" onclick="openAmap('老城杯子乾北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                            <div class="food-tag">廖叔凉茶（王老吉）<span class="price">3</span>
+                                <a href="javascript:void(0);" onclick="openAmap('廖叔凉茶北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                            <div class="food-tag">百草堂凉茶（甘蔗汁）<span class="price">3.5</span>
+                                <a href="javascript:void(0);" onclick="openAmap('百草堂凉茶北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                        <p class="activity-desc" style="margin-top: 10px;">之后游览北海老街，感受百年骑楼建筑的历史韵味。</p>
+                        <div class="location-list">
+                            <div class="location-tag"><i class="fas fa-map-marker-alt"></i>北海老街
+                                <a href="javascript:void(0);" onclick="openAmap('北海老街')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="activity">
+                        <span class="activity-time">傍晚</span>
+                        <div class="activity-title">
+                            <i class="fas fa-sun"></i>观赏日落
+                        </div>
+                        <p class="activity-desc">前往冠头岭区域，在以下地点中选择一处欣赏北海最美的日落：</p>
+                        <div class="location-list">
+                            <div class="location-tag"><i class="fas fa-map-marker-alt"></i>紫霞湾
+                                <a href="javascript:void(0);" onclick="openAmap('紫霞湾北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                            <div class="location-tag"><i class="fas fa-map-marker-alt"></i>冠岭山庄10号楼
+                                <a href="javascript:void(0);" onclick="openAmap('冠岭山庄10号楼北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                            <div class="location-tag"><i class="fas fa-map-marker-alt"></i>冠岭山庄2号楼
+                                <a href="javascript:void(0);" onclick="openAmap('冠岭山庄2号楼北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="activity">
+                        <span class="activity-time">晚上</span>
+                        <div class="activity-title">
+                            <i class="fas fa-moon"></i>晚餐 & 夜游
+                        </div>
+                        <p class="activity-desc">在附近享用晚餐，之后可以前往：</p>
+                        <div class="location-list">
+                            <div class="location-tag"><i class="fas fa-map-marker-alt"></i>黄金北岸海上观光栈道
+                                <a href="javascript:void(0);" onclick="openAmap('黄金北岸海上观光栈道北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                        <p class="activity-desc" style="margin-top: 10px;">推荐晚餐选择：</p>
+                        <div class="food-list">
+                            <div class="food-tag">洪四海鲜大排档（炸沙虫）<span class="price">50</span>
+                                <a href="javascript:void(0);" onclick="openAmap('洪四海鲜大排档北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                            <div class="food-tag">恒仔叉烧鸡鸭饭（叉烧饭）<span class="price">25</span>
+                                <a href="javascript:void(0);" onclick="openAmap('恒仔叉烧鸡鸭饭北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 第二天 -->
+            <div class="day-card day-2">
+                <div class="day-header">
+                    <div class="day-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <div class="day-title">
+                        <h2>第二天：侨港美食 & 赶海日落</h2>
+                        <p>侨港美食探索，下午赶海体验与日落观赏</p>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <div class="activity">
+                        <span class="activity-time">上午</span>
+                        <div class="activity-title">
+                            <i class="fas fa-utensils"></i>早餐 & 流下村
+                        </div>
+                        <p class="activity-desc">享用丰盛早餐，然后前往文艺村落流下村拍照打卡：</p>
+                        <div class="food-list">
+                            <div class="food-tag">冯仔早餐店（海鲜牛肉粉）<span class="price">12</span>
+                                <a href="javascript:void(0);" onclick="openAmap('冯仔早餐店北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                            <div class="food-tag">小鬼早餐店（海鲜粥）<span class="price">15</span>
+                                <a href="javascript:void(0);" onclick="openAmap('小鬼早餐店北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                            <div class="food-tag">菠萝树猪脚粉店（猪脚粉）<span class="price">15</span>
+                                <a href="javascript:void(0);" onclick="openAmap('菠萝树猪脚粉店北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                        <div class="location-list" style="margin-top: 10px;">
+                            <div class="location-tag"><i class="fas fa-map-marker-alt"></i>流下村
+                                <a href="javascript:void(0);" onclick="openAmap('流下村北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="activity">
+                        <span class="activity-time">中午</span>
+                        <div class="activity-title">
+                            <i class="fas fa-ice-cream"></i>侨港风情街美食之旅
+                        </div>
+                        <p class="activity-desc">前往侨港风情街，品尝越南风味和糖水甜品：</p>
+                        <div class="food-list">
+                            <div class="food-tag">侨越世家越南卷粉 <span class="price">12</span>
+                                <a href="javascript:void(0);" onclick="openAmap('侨越世家越南卷粉北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                            <div class="food-tag">侨港杯杯乐（芒果炒冰）<span class="price">12</span>
+                                <a href="javascript:void(0);" onclick="openAmap('侨港杯杯乐北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                            <div class="food-tag">二十四幢糖水 <span class="price">6</span>
+                                <a href="javascript:void(0);" onclick="openAmap('二十四幢糖水北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                            <div class="food-tag">妈仔鱼腐（鱼腐、牛筋肉）<span class="price">9</span>
+                                <a href="javascript:void(0);" onclick="openAmap('妈仔鱼腐北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                            <div class="food-tag">千鸟牛杂小吃（没开，注意）
+                                <a href="javascript:void(0);" onclick="openAmap('千鸟牛杂小吃北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                        <div class="location-list" style="margin-top: 10px;">
+                            <div class="location-tag"><i class="fas fa-map-marker-alt"></i>侨港风情街
+                                <a href="javascript:void(0);" onclick="openAmap('侨港风情街北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="activity">
+                        <span class="activity-time">下午</span>
+                        <div class="activity-title">
+                            <i class="fas fa-fish"></i>赶海体验
+                        </div>
+                        <p class="activity-desc">根据潮汐时间，下午前往银滩或侨港海滩体验赶海乐趣，捕捉海鲜：</p>
+                        <div class="location-list">
+                            <div class="location-tag"><i class="fas fa-map-marker-alt"></i>银滩
+                                <a href="javascript:void(0);" onclick="openAmap('银滩北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                            <div class="location-tag"><i class="fas fa-map-marker-alt"></i>侨港海滩
+                                <a href="javascript:void(0);" onclick="openAmap('侨港海滩北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="activity">
+                        <span class="activity-time">傍晚</span>
+                        <div class="activity-title">
+                            <i class="fas fa-sun"></i>海滩日落
+                        </div>
+                        <p class="activity-desc">在赶海的海滩直接观赏日落，享受海边落日美景。</p>
+                    </div>
+                    
+                    <div class="activity">
+                        <span class="activity-time">晚上</span>
+                        <div class="activity-title">
+                            <i class="fas fa-concierge-bell"></i>晚餐 & 糖水甜品
+                        </div>
+                        <p class="activity-desc">晚餐后品尝北海特色糖水，结束美好的一天：</p>
+                        <div class="food-list">
+                            <div class="food-tag">荣记糖水（鸡屎藤斑斓桂花拼）<span class="price">6</span>
+                                <a href="javascript:void(0);" onclick="openAmap('荣记糖水北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                            <div class="food-tag">伍哥糖水（板栗龙眼）<span class="price">9</span>
+                                <a href="javascript:void(0);" onclick="openAmap('伍哥糖水北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                            <div class="food-tag">鲜奶店（双皮奶）<span class="price">10</span>
+                                <a href="javascript:void(0);" onclick="openAmap('鲜奶店北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                            <div class="food-tag">海运糖水（桂花粉）<span class="price">3</span>
+                                <a href="javascript:void(0);" onclick="openAmap('海运糖水北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 第三天 -->
+            <div class="day-card day-3">
+                <div class="day-header">
+                    <div class="day-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <div class="day-title">
+                        <h2>第三天：美食收官 & 返程</h2>
+                        <p>补打卡未尝试的美食，购买伴手礼，返程</p>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <div class="activity">
+                        <span class="activity-time">上午</span>
+                        <div class="activity-title">
+                            <i class="fas fa-store"></i>补打卡美食 & 购买伴手礼
+                        </div>
+                        <p class="activity-desc">前往之前未尝试的美食店，并购买北海特色伴手礼：</p>
+                        <div class="food-list">
+                            <div class="food-tag">北海田螺店（田螺、螺蛳粉）<span class="price">15/12</span>
+                                <a href="javascript:void(0);" onclick="openAmap('北海田螺店')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                            <div class="food-tag">广健堂（奶昔糕）<span class="price">3.5</span>
+                                <a href="javascript:void(0);" onclick="openAmap('广健堂北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                            <div class="food-tag">老罗家古工饼坊（蛋球）<span class="price">3.5</span>
+                                <a href="javascript:void(0);" onclick="openAmap('老罗家古工饼坊北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                            <div class="food-tag">丽丽甜品店（咖啡、法包）<span class="price">8/13</span>
+                                <a href="javascript:void(0);" onclick="openAmap('丽丽甜品店北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="activity">
+                        <span class="activity-time">中午</span>
+                        <div class="activity-title">
+                            <i class="fas fa-utensils"></i>告别午餐
+                        </div>
+                        <p class="activity-desc">享用最后一顿北海美食，可以选择之前最喜欢的店再吃一次，或尝试新的美食。</p>
+                        <div class="food-list">
+                            <div class="food-tag">推荐：洪四海鲜大排档
+                                <a href="javascript:void(0);" onclick="openAmap('洪四海鲜大排档北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                            <div class="food-tag">或 恒仔叉烧鸡鸭饭
+                                <a href="javascript:void(0);" onclick="openAmap('恒仔叉烧鸡鸭饭北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                            <div class="food-tag">或 妈仔鱼腐
+                                <a href="javascript:void(0);" onclick="openAmap('妈仔鱼腐北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="activity">
+                        <span class="activity-time">下午</span>
+                        <div class="activity-title">
+                            <i class="fas fa-plane-departure"></i>整理行李 & 返程
+                        </div>
+                        <p class="activity-desc">返回酒店取行李，根据航班/车次时间前往车站/机场，结束愉快的北海之旅。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="location-container">
+            <h2><i class="fas fa-map-marked-alt"></i>行程方位概览</h2>
+            <div class="location-overview">
+                <div class="location-area">
+                    <div class="area-header">
+                        <div class="area-icon">
+                            <i class="fas fa-hotel"></i>
+                        </div>
+                        <div class="area-title">
+                            <h3>酒店区域（北部湾西路）</h3>
+                            <p>住宿基地，交通便利，靠近市区</p>
+                        </div>
+                    </div>
+                    <div class="area-content">
+                        <div class="location-item">
+                            <div>
+                                <div class="location-name"><i class="fas fa-hotel"></i>北海泊林酒店</div>
+                                <div class="location-details">住宿地点，北部湾西路35号</div>
+                            </div>
+                            <div class="location-navigation">
+                                <a href="javascript:void(0);" onclick="openAmap('北海泊林酒店')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                        <div class="location-item">
+                            <div>
+                                <div class="location-name"><i class="fas fa-utensils"></i>广健堂</div>
+                                <div class="location-details">奶昔糕 <span class="price">3.5</span></div>
+                            </div>
+                            <div class="location-navigation">
+                                <a href="javascript:void(0);" onclick="openAmap('广健堂北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                        <div class="location-item">
+                            <div>
+                                <div class="location-name"><i class="fas fa-utensils"></i>老罗家古工饼坊</div>
+                                <div class="location-details">蛋球 <span class="price">3.5</span></div>
+                            </div>
+                            <div class="location-navigation">
+                                <a href="javascript:void(0);" onclick="openAmap('老罗家古工饼坊北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                        <div class="location-item">
+                            <div>
+                                <div class="location-name"><i class="fas fa-utensils"></i>海运糖水</div>
+                                <div class="location-details">桂花粉 <span class="price">3</span></div>
+                            </div>
+                            <div class="location-navigation">
+                                <a href="javascript:void(0);" onclick="openAmap('海运糖水北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="location-connections">
+                    <div class="connection-line"></div>
+                    <div class="connection-label">北向约3公里</div>
+                    <div class="connection-line"></div>
+                </div>
+                
+                <div class="location-area">
+                    <div class="area-header">
+                        <div class="area-icon">
+                            <i class="fas fa-umbrella-beach"></i>
+                        </div>
+                        <div class="area-title">
+                            <h3>北海老街 & 海边区域</h3>
+                            <p>历史建筑、特色小吃、海边栈道</p>
+                        </div>
+                    </div>
+                    <div class="area-content">
+                        <div class="location-item">
+                            <div>
+                                <div class="location-name"><i class="fas fa-landmark"></i>北海老街</div>
+                                <div class="location-details">百年骑楼建筑，历史风情</div>
+                            </div>
+                            <div class="location-navigation">
+                                <a href="javascript:void(0);" onclick="openAmap('北海老街')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                        <div class="location-item">
+                            <div>
+                                <div class="location-name"><i class="fas fa-utensils"></i>李姨虾饼店</div>
+                                <div class="location-details">虾饼 <span class="price">5</span></div>
+                            </div>
+                            <div class="location-navigation">
+                                <a href="javascript:void(0);" onclick="openAmap('李姨虾饼店北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                        <div class="location-item">
+                            <div>
+                                <div class="location-name"><i class="fas fa-utensils"></i>付姨蛋散</div>
+                                <div class="location-details">蛋散 <span class="price">5</span></div>
+                            </div>
+                            <div class="location-navigation">
+                                <a href="javascript:void(0);" onclick="openAmap('付姨蛋散北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                        <div class="location-item">
+                            <div>
+                                <div class="location-name"><i class="fas fa-utensils"></i>老城杯子乾</div>
+                                <div class="location-details">发粒红糖，上午卖</div>
+                            </div>
+                            <div class="location-navigation">
+                                <a href="javascript:void(0);" onclick="openAmap('老城杯子乾北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                        <div class="location-item">
+                            <div>
+                                <div class="location-name"><i class="fas fa-walking"></i>黄金北岸海上观光栈道</div>
+                                <div class="location-details">夜景观光，海边散步</div>
+                            </div>
+                            <div class="location-navigation">
+                                <a href="javascript:void(0);" onclick="openAmap('黄金北岸海上观光栈道北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                        <div class="location-item">
+                            <div>
+                                <div class="location-name"><i class="fas fa-utensils"></i>廖叔凉茶</div>
+                                <div class="location-details">王老吉 <span class="price">3</span></div>
+                            </div>
+                            <div class="location-navigation">
+                                <a href="javascript:void(0);" onclick="openAmap('廖叔凉茶北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                        <div class="location-item">
+                            <div>
+                                <div class="location-name"><i class="fas fa-utensils"></i>百草堂凉茶</div>
+                                <div class="location-details">甘蔗汁 <span class="price">3.5</span></div>
+                            </div>
+                            <div class="location-navigation">
+                                <a href="javascript:void(0);" onclick="openAmap('百草堂凉茶北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="location-connections">
+                    <div class="connection-line"></div>
+                    <div class="connection-label">西南向约8公里</div>
+                    <div class="connection-line"></div>
+                </div>
+                
+                <div class="location-area">
+                    <div class="area-header">
+                        <div class="area-icon">
+                            <i class="fas fa-sun"></i>
+                        </div>
+                        <div class="area-title">
+                            <h3>冠头岭区域（日落观赏点）</h3>
+                            <p>最佳日落观赏地，文艺拍照点</p>
+                        </div>
+                    </div>
+                    <div class="area-content">
+                        <div class="location-item">
+                            <div>
+                                <div class="location-name"><i class="fas fa-sun"></i>紫霞湾</div>
+                                <div class="location-details">日落观赏，海滩美景</div>
+                            </div>
+                            <div class="location-navigation">
+                                <a href="javascript:void(0);" onclick="openAmap('紫霞湾北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                        <div class="location-item">
+                            <div>
+                                <div class="location-name"><i class="fas fa-camera"></i>流下村</div>
+                                <div class="location-details">文艺拍照打卡地</div>
+                            </div>
+                            <div class="location-navigation">
+                                <a href="javascript:void(0);" onclick="openAmap('流下村北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                        <div class="location-item">
+                            <div>
+                                <div class="location-name"><i class="fas fa-building"></i>冠岭山庄10号楼</div>
+                                <div class="location-details">日落观赏点，观景位置佳</div>
+                            </div>
+                            <div class="location-navigation">
+                                <a href="javascript:void(0);" onclick="openAmap('冠岭山庄10号楼北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                        <div class="location-item">
+                            <div>
+                                <div class="location-name"><i class="fas fa-building"></i>冠岭山庄2号楼</div>
+                                <div class="location-details">日落观赏点</div>
+                            </div>
+                            <div class="location-navigation">
+                                <a href="javascript:void(0);" onclick="openAmap('冠岭山庄2号楼北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="location-connections">
+                    <div class="connection-line"></div>
+                    <div class="connection-label">南向约10公里</div>
+                    <div class="connection-line"></div>
+                </div>
+                
+                <div class="location-area">
+                    <div class="area-header">
+                        <div class="area-icon">
+                            <i class="fas fa-ice-cream"></i>
+                        </div>
+                        <div class="area-title">
+                            <h3>侨港 & 银滩区域</h3>
+                            <p>美食聚集地，海滩活动，赶海体验</p>
+                        </div>
+                    </div>
+                    <div class="area-content">
+                        <div class="location-item">
+                            <div>
+                                <div class="location-name"><i class="fas fa-store"></i>侨港风情街</div>
+                                <div class="location-details">越南风味美食聚集地</div>
+                            </div>
+                            <div class="location-navigation">
+                                <a href="javascript:void(0);" onclick="openAmap('侨港风情街北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                        <div class="location-item">
+                            <div>
+                                <div class="location-name"><i class="fas fa-utensils"></i>侨越世家越南卷粉</div>
+                                <div class="location-details">越南卷粉 <span class="price">12</span></div>
+                            </div>
+                            <div class="location-navigation">
+                                <a href="javascript:void(0);" onclick="openAmap('侨越世家越南卷粉北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                        <div class="location-item">
+                            <div>
+                                <div class="location-name"><i class="fas fa-utensils"></i>侨港杯杯乐</div>
+                                <div class="location-details">芒果炒冰 <span class="price">12</span></div>
+                            </div>
+                            <div class="location-navigation">
+                                <a href="javascript:void(0);" onclick="openAmap('侨港杯杯乐北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                        <div class="location-item">
+                            <div>
+                                <div class="location-name"><i class="fas fa-utensils"></i>二十四幢糖水</div>
+                                <div class="location-details">糖水 <span class="price">6</span></div>
+                            </div>
+                            <div class="location-navigation">
+                                <a href="javascript:void(0);" onclick="openAmap('二十四幢糖水北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                        <div class="location-item">
+                            <div>
+                                <div class="location-name"><i class="fas fa-utensils"></i>荣记糖水</div>
+                                <div class="location-details">鸡屎藤斑斓桂花拼 <span class="price">6</span></div>
+                            </div>
+                            <div class="location-navigation">
+                                <a href="javascript:void(0);" onclick="openAmap('荣记糖水北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                        <div class="location-item">
+                            <div>
+                                <div class="location-name"><i class="fas fa-utensils"></i>伍哥糖水</div>
+                                <div class="location-details">板栗龙眼 <span class="price">9</span></div>
+                            </div>
+                            <div class="location-navigation">
+                                <a href="javascript:void(0);" onclick="openAmap('伍哥糖水北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                        <div class="location-item">
+                            <div>
+                                <div class="location-name"><i class="fas fa-utensils"></i>鲜奶店</div>
+                                <div class="location-details">双皮奶 <span class="price">10</span></div>
+                            </div>
+                            <div class="location-navigation">
+                                <a href="javascript:void(0);" onclick="openAmap('鲜奶店北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                        <div class="location-item">
+                            <div>
+                                <div class="location-name"><i class="fas fa-utensils"></i>妈仔鱼腐</div>
+                                <div class="location-details">鱼腐、牛筋肉 <span class="price">9</span></div>
+                            </div>
+                            <div class="location-navigation">
+                                <a href="javascript:void(0);" onclick="openAmap('妈仔鱼腐北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                        <div class="location-item">
+                            <div>
+                                <div class="location-name"><i class="fas fa-utensils"></i>千鸟牛杂小吃</div>
+                                <div class="location-details">没开，注意营业状态</div>
+                            </div>
+                            <div class="location-navigation">
+                                <a href="javascript:void(0);" onclick="openAmap('千鸟牛杂小吃北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                        <div class="location-item">
+                            <div>
+                                <div class="location-name"><i class="fas fa-utensils"></i>北海田螺店</div>
+                                <div class="location-details">田螺15 螺蛳粉12</div>
+                            </div>
+                            <div class="location-navigation">
+                                <a href="javascript:void(0);" onclick="openAmap('北海田螺店')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                        <div class="location-item">
+                            <div>
+                                <div class="location-name"><i class="fas fa-utensils"></i>冯仔早餐店</div>
+                                <div class="location-details">海鲜牛肉粉 <span class="price">12</span></div>
+                            </div>
+                            <div class="location-navigation">
+                                <a href="javascript:void(0);" onclick="openAmap('冯仔早餐店北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                        <div class="location-item">
+                            <div>
+                                <div class="location-name"><i class="fas fa-utensils"></i>小鬼早餐店</div>
+                                <div class="location-details">海鲜粥 <span class="price">15</span></div>
+                            </div>
+                            <div class="location-navigation">
+                                <a href="javascript:void(0);" onclick="openAmap('小鬼早餐店北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                        <div class="location-item">
+                            <div>
+                                <div class="location-name"><i class="fas fa-utensils"></i>菠萝树猪脚粉店</div>
+                                <div class="location-details">猪脚粉 <span class="price">15</span></div>
+                            </div>
+                            <div class="location-navigation">
+                                <a href="javascript:void(0);" onclick="openAmap('菠萝树猪脚粉店北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                        <div class="location-item">
+                            <div>
+                                <div class="location-name"><i class="fas fa-utensils"></i>丽丽甜品店</div>
+                                <div class="location-details">咖啡8 法包13</div>
+                            </div>
+                            <div class="location-navigation">
+                                <a href="javascript:void(0);" onclick="openAmap('丽丽甜品店北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                        <div class="location-item">
+                            <div>
+                                <div class="location-name"><i class="fas fa-utensils"></i>洪四海鲜大排档</div>
+                                <div class="location-details">炸沙虫 <span class="price">50</span></div>
+                            </div>
+                            <div class="location-navigation">
+                                <a href="javascript:void(0);" onclick="openAmap('洪四海鲜大排档北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                        <div class="location-item">
+                            <div>
+                                <div class="location-name"><i class="fas fa-utensils"></i>恒仔叉烧鸡鸭饭</div>
+                                <div class="location-details">叉烧饭 <span class="price">25</span></div>
+                            </div>
+                            <div class="location-navigation">
+                                <a href="javascript:void(0);" onclick="openAmap('恒仔叉烧鸡鸭饭北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                        <div class="location-item">
+                            <div>
+                                <div class="location-name"><i class="fas fa-water"></i>银滩</div>
+                                <div class="location-details">沙滩、赶海、游泳</div>
+                            </div>
+                            <div class="location-navigation">
+                                <a href="javascript:void(0);" onclick="openAmap('银滩北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                        <div class="location-item">
+                            <div>
+                                <div class="location-name"><i class="fas fa-water"></i>侨港海滩</div>
+                                <div class="location-details">海滩、赶海、日落观赏</div>
+                            </div>
+                            <div class="location-navigation">
+                                <a href="javascript:void(0);" onclick="openAmap('侨港海滩北海')" class="navigation-link">
+                                    <i class="fas fa-map-marked-alt"></i>导航
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="navigation-note">
+                <i class="fas fa-info-circle"></i>提示：点击"导航"链接将直接跳转到高德地图App进行导航。如果未安装高德地图App，将自动跳转到高德地图网页版。
+            </div>
+        </div>
+        
+        <div class="tips">
+            <h2><i class="fas fa-lightbulb"></i>旅行小贴士</h2>
+            <div class="tips-list">
+                <div class="tip">
+                    <strong>赶海注意事项：</strong>赶海最佳时间是退潮后2小时左右，查询北海潮汐表安排时间。准备拖鞋、小桶、铲子等工具，注意安全。
+                </div>
+                <div class="tip">
+                    <strong>美食打卡：</strong>部分小吃店营业时间有限（如老城杯子乾上午卖），建议提前规划。侨港风情街晚上非常热闹，适合晚餐和夜宵。
+                </div>
+                <div class="tip">
+                    <strong>交通建议：</strong>北海景点相对集中，可租电动车或使用打车软件出行，方便快捷。从酒店到主要景点打车费用约10-30元。
+                </div>
+                <div class="tip">
+                    <strong>日落时间：</strong>提前查看当天日落时间，建议提前30-60分钟到达观赏点。第二天赶海与日落结合，可欣赏海边落日美景。
+                </div>
+                <div class="tip">
+                    <strong>防晒措施：</strong>北海日照强烈，务必携带防晒霜、太阳镜、遮阳帽等防晒用品，赶海时建议穿防晒衣。
+                </div>
+                <div class="tip">
+                    <strong>预算提示：</strong>根据您列出的价格，美食预算约 <span class="highlight">200-300元/人</span>（不含正餐大餐）。住宿费用另计。
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>倩倩的北海3天2夜美食景点行程规划 &copy; 2023</p>
+            <p>包含所有您提供的美食店和景点信息 | 住宿：北海泊林酒店（北部湾西路35号）</p>
+            <p>行程特色：第一天看日落，第二天赶海+日落，三天尝遍北海特色美食</p>
+        </div>
+    </footer>
+
+    <script>
+        // 高德地图导航函数（优化版）
+        function openAmap(destination) {
+            console.log('开始导航到:', destination);
+            
+            // 检测设备和浏览器类型
+            const ua = navigator.userAgent.toLowerCase();
+            const isAndroid = /android/i.test(ua);
+            const isIOS = /iphone|ipad|ipod/i.test(ua);
+            const isQQBrowser = /qqbrowser|mqqbrowser/i.test(ua);
+            const isWeixin = /micromessenger/i.test(ua);
+            
+            // 显示浏览器提示
+            showBrowserNotice(isWeixin, isQQBrowser);
+            
+            // 编码参数
+            const encodedDestination = encodeURIComponent(destination);
+            const sourceApplication = encodeURIComponent('倩倩北海行程规划');
+            
+            // 构建URI Scheme - 区分Android和iOS
+            let scheme;
+            if (isAndroid) {
+                // Android使用 amapuri://route/plan/
+                scheme = `amapuri://route/plan/?sourceApplication=${sourceApplication}&dname=${encodedDestination}&dev=0&t=0`;
+            } else if (isIOS) {
+                // iOS使用 iosamap://path
+                scheme = `iosamap://path?sourceApplication=${sourceApplication}&dname=${encodedDestination}&dev=0&t=0`;
+            } else {
+                // 默认使用通用Scheme
+                scheme = `amapuri://route/plan/?sourceApplication=${sourceApplication}&dname=${encodedDestination}&dev=0&t=0`;
+            }
+            
+            console.log('生成的Scheme:', scheme);
+            
+            // Web版备用URL（失败回退）
+            const webUrl = `https://uri.amap.com/search?keyword=${encodedDestination}&city=北海`;
+            
+            // 记录开始时间
+            const startTime = Date.now();
+            
+            // 针对QQ浏览器使用iframe方式（双重尝试）
+            if (isQQBrowser) {
+                console.log('检测到QQ浏览器，使用iframe方式唤醒APP');
+                openSchemeInQQBrowser(scheme, webUrl);
+                return;
+            }
+            
+            // 普通浏览器的跳转逻辑
+            openSchemeWithFallback(scheme, webUrl);
+        }
+        
+        // 在QQ浏览器中打开Scheme（双重尝试）
+        function openSchemeInQQBrowser(scheme, webUrl) {
+            let appOpened = false;
+            
+            // 第一次尝试：直接跳转
+            try {
+                window.location.href = scheme;
+                console.log('第一次尝试：直接跳转');
+            } catch (e) {
+                console.error('第一次尝试失败:', e);
+            }
+            
+            // 第二次尝试：使用iframe（某些QQ浏览器版本需要）
+            setTimeout(() => {
+                if (!appOpened) {
+                    try {
+                        const iframe = document.createElement('iframe');
+                        iframe.style.display = 'none';
+                        iframe.src = scheme;
+                        document.body.appendChild(iframe);
+                        console.log('第二次尝试：iframe跳转');
+                        
+                        // 2秒后移除iframe
+                        setTimeout(() => {
+                            if (iframe.parentNode) {
+                                iframe.parentNode.removeChild(iframe);
+                            }
+                        }, 2000);
+                    } catch (e) {
+                        console.error('第二次尝试失败:', e);
+                    }
+                }
+            }, 300);
+            
+            // 检测是否成功跳转
+            const checkInterval = setInterval(() => {
+                // 如果页面隐藏超过500ms，认为跳转成功
+                if (document.hidden) {
+                    appOpened = true;
+                    clearInterval(checkInterval);
+                    console.log('APP已打开，跳转成功');
+                }
+                
+                // 2秒后检查是否还在当前页面
+                if (Date.now() - startTime > 2000 && !appOpened) {
+                    clearInterval(checkInterval);
+                    console.log('2秒后未跳转，回退到Web版');
+                    
+                    // 跳转到Web版
+                    if (isWeixin || isQQBrowser) {
+                        // 在微信或QQ浏览器中，使用新窗口打开
+                        window.open(webUrl, '_blank');
+                    } else {
+                        window.location.href = webUrl;
+                    }
+                }
+            }, 100);
+        }
+        
+        // 普通浏览器打开Scheme并处理回退
+        function openSchemeWithFallback(scheme, webUrl) {
+            let appOpened = false;
+            const startTime = Date.now();
+            
+            // 监听页面可见性变化
+            const handleVisibilityChange = () => {
+                if (document.hidden) {
+                    appOpened = true;
+                    console.log('页面隐藏，可能已跳转到APP');
+                }
+            };
+            
+            document.addEventListener('visibilitychange', handleVisibilityChange);
+            
+            // 尝试打开APP
+            try {
+                window.location.href = scheme;
+                console.log('尝试打开APP Scheme');
+            } catch (e) {
+                console.error('打开Scheme失败:', e);
+            }
+            
+            // 设置超时检查
+            setTimeout(() => {
+                document.removeEventListener('visibilitychange', handleVisibilityChange);
+                
+                // 如果页面仍然可见，说明APP未打开
+                if (!appOpened) {
+                    console.log('APP未打开，回退到Web版');
+                    
+                    // 跳转到Web版
+                    window.location.href = webUrl;
+                }
+            }, 2000);
+        }
+        
+        // 显示浏览器提示
+        function showBrowserNotice(isWeixin, isQQBrowser) {
+            const browserNotice = document.getElementById('browserNotice');
+            const browserText = document.getElementById('browserText');
+            
+            if (isWeixin) {
+                browserText.textContent = '微信浏览器限制跳转，请点击右上角"..."选择"在浏览器打开"以获得更好的导航体验。';
+                browserNotice.style.display = 'block';
+            } else if (isQQBrowser) {
+                browserText.textContent = '检测到QQ浏览器，导航可能需要手动确认跳转。';
+                browserNotice.style.display = 'block';
+            } else {
+                browserNotice.style.display = 'none';
+            }
+        }
+        
+        // 为所有导航链接添加事件监听（备用方案）
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.navigation-link');
+            navLinks.forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    // 阻止默认行为
+                    e.preventDefault();
+                    
+                    // 从链接的onclick属性中提取目的地
+                    const onclickAttr = this.getAttribute('onclick');
+                    if (onclickAttr && onclickAttr.includes('openAmap')) {
+                        // 提取参数并执行
+                        const match = onclickAttr.match(/openAmap\('([^']+)'\)/);
+                        if (match && match[1]) {
+                            openAmap(match[1]);
+                        }
+                    }
+                });
+            });
+            
+            // 页面加载时检测浏览器
+            const ua = navigator.userAgent.toLowerCase();
+            const isWeixin = /micromessenger/i.test(ua);
+            const isQQBrowser = /qqbrowser|mqqbrowser/i.test(ua);
+            showBrowserNotice(isWeixin, isQQBrowser);
+        });
+    </script>
+</body>
+</html>
